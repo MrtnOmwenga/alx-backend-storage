@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-import redis
-import uuid
-from typing import Union, Any, Callable
-from functools import wraps
 """
 Task 0: Writing strings to Redis
 """
+import uuid
+import redis
+from functools import wraps
+from typing import Any, Callable, Union
 
 
 def count_calls(method: Callable) -> Callable:
@@ -71,6 +71,8 @@ class Cache:
         self._redis = redis.Redis()
         self._redis.flushdb(True)
 
+    @call_history
+    @count_calls
     def store(self, data: Union[int, float, str, bytes]) -> str:
         """ Stored data in redis instance """
         key = str(uuid.uuid4())
