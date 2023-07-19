@@ -8,7 +8,6 @@ Task 0: Writing strings to Redis
 """
 
 
-
 def count_calls(method: Callable) -> Callable:
     '''Tracks the number of calls made to a method in a Cache class.
     '''
@@ -63,6 +62,7 @@ def replay(fn: Callable) -> None:
             fxn_input.decode("utf-8"),
             fxn_output,
         ))
+
 
 class Cache:
     """ Create class Cache """
