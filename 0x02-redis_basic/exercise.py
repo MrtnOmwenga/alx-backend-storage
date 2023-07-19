@@ -6,9 +6,10 @@ from typing import Union
 Task 0: Writing strings to Redis
 """
 
+
 class Cache:
     """ Create class Cache """
-    def __init__(self):
+    def __init__(self) -> None:
         """ Initialize class """
         self._redis = redis.Redis()
         self._redis.flushdb(True)
